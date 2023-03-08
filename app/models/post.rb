@@ -1,5 +1,4 @@
 class Post < ApplicationRecord
-    belongs_to :users, class_name: "users", foreign_key: "id"
-    validates :title , presence: true , length: {minimum:3, maximum:10} , uniqueness: true
-    validates :body ,
+    belongs_to :user
+    validates :title , presence: true , length: {minimum:3, maximum:10} 
 end

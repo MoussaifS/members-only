@@ -1,0 +1,17 @@
+
+<h1>Create New Post </h1>
+
+<div>
+<%= form_with model:@post , method: 'POST' do |post| %>
+<%=  post.label  "Post title:" , :class=>"form-label" %>
+<%=  post.text_field :title , :class=>'form-control' , :autocomplete => :off %> 
+<br>
+<br>
+<%= post.label :body, "Post Body:" , :class=>"form-label" %>
+<%= post.text_area  :body , :autocomplete => :off , :class=>'form-control' %>
+
+<p> <%= (:user_id @user) %> </p>
+
+    <%=post.submit  "Post"  , :class=> "btn btn-primary" %>
+<%end%>
+</div> 
