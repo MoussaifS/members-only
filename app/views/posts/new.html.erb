@@ -10,7 +10,6 @@
 <%= post.label :body, "Post Body:" , :class=>"form-label" %>
 <%= post.text_area  :body , :autocomplete => :off , :class=>'form-control' %>
 
-<p> <%= (:user_id @user) %> </p>
 
     <%=post.submit  "Post"  , :class=> "btn btn-primary" %>
 <%end%>

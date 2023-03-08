@@ -1,16 +1,17 @@
 class PostsController < ApplicationController
     def index
         @post = Post.all
+        @user = Post.all
     end
 
     def new
-        @user = User.first.id
         @post = Post.new
         
     end
 
     def create 
         @post = Post.new(post_params)
+        @post.user_id = User.first.id
         if @post.save 
             render 'index'
         end
@@ -19,6 +20,7 @@ class PostsController < ApplicationController
 
     private 
     def post_params
-        params.require(:post).permit(:title , :body , @user)
+        @user = User.first.id
+        params.require(:post).permit(:title , :body )
     end
 end

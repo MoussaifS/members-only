@@ -1,1 +1,15 @@
 <h1><%= @user[:name] %> </h1>
+
+<%= link_to "create a post"  , {:controller => "posts", :action => "create", :user_id   => @user.id }  , :class=>"btn btn-danger"%>
+
+
+<%@post.each do |post|%>
+<div class="card">
+  <h5 class="card-header">post id <%=post.id%></h5>
+  <div class="card-body">
+    <h5 class="card-title"><%= post.title%></h5>
+    <p class="card-text"><%= post.body%></p>
+    <a href="#" class="btn btn-primary"><%= post.user_id%></a>
+  </div>
+</div>z
+<%end%>
