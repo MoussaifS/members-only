@@ -1,11 +1,7 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar</a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-
+      <%= link_to "POSTS"  , {:controller => "posts", :action => "index"}  , :class=>"navbar-brand"%>
+      <%= link_to "new post"  , {:controller => "posts", :action => "index"}  , :class=>"btn btn-outline-success"%>
       <%= link_to "Sign in"  , {:controller => "users", :action => "new"}  , :class=>"btn btn-outline-success"%>
-
-    </form>
   </div>
 </nav>
