@@ -8,16 +8,18 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
+
+
+  
   # POST /resource/sign_in
   # def create
   #   super
   # end
 
-  # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
 
+  def destroy
+    redirect_to root_path
+  end 
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

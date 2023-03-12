@@ -1,21 +1,26 @@
 
+<%= render '/nav'%>
 
 <h1> welcome to the post index </h1>
 
 
 
-
-
-<%@post.each do |post|%>
-<div class="card">
-  <h5 class="card-header">post id <%=post.id%></h5>
-  <div class="card-body">
-    <h5 class="card-title"><%= post.title%></h5>
+<%@posts = Post.all%>
+ <%@posts.each do |post|%>
+ <div class='card w-75 mb-3'>
+<div class="card-body">
+    <h5 class="card-header">post id <%=post.id%></h5>
+    <h3 class="card-title"><%= post.title%></h3>
     <p class="card-text"><%= post.body%></p>
-    <a href="#" class="btn btn-primary"><%= post.user_id%></a>
-  </div>
+
+
+    <%unless current_user.nil?%>
+        <a href="#" class="btn btn-primary"><%= User.find(post.user_id).name %></a> 
+    <%end%>
+    </div>
 </div>
 <%end%>
+
 
 
 

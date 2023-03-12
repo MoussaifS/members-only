@@ -1,8 +1,13 @@
 class PostsController < ApplicationController
-    def index
+   def index
         @post = Post.all
         @user = Post.all
     end
+
+    # def show 
+    #     @post = Post.where(user_id: params[:id])
+    #     @user =   User.find(params[:id])
+    # end
 
     def new
         @post = Post.new
@@ -11,9 +16,9 @@ class PostsController < ApplicationController
 
     def create 
         @post = Post.new(post_params)
-        @post.user_id = User.first.id
+        @post.user_id = current_user.id
         if @post.save 
-            render 'index'
+            redirect_to root_path
         end
     end
 

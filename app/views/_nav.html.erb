@@ -1,7 +1,12 @@
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
+  
       <%= link_to "POSTS"  , {:controller => "posts", :action => "index"}  , :class=>"navbar-brand"%>
-      <%= link_to "new post"  , {:controller => "posts", :action => "index"}  , :class=>"btn btn-outline-success"%>
-      <%= link_to "Sign in"  , {:controller => "users", :action => "new"}  , :class=>"btn btn-outline-success"%>
+      <%if current_user.nil?%>
+      <%= link_to "Sign in or log-in"  , {:controller => "users/registrations", :action => "new"}  , :class=>"btn btn-outline-success"%>
+      <%else%>
+      <%= link_to "new post"  , {:controller => "posts", :action => "new"}  , :class=>"btn btn-outline-success"%>
+      <%= link_to "log out "  , {:controller => 'users/sessions', :action => "destroy"}  , :class=>"btn btn-outline-warning"%>
+      <%end%>
   </div>
 </nav>

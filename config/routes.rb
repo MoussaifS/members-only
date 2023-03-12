@@ -10,10 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
    
   # get 'test' , to: 'users#test' , as: 'test'
-  resources :posts 
-  # do 
-  #   resources :users 
-  # end
+  resources :posts  do 
+    resources :users 
+  end
   
+  root "posts#index"
   # root "articles#index"
 end
