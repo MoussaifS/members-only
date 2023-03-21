@@ -25,7 +25,6 @@ class PostsController < ApplicationController
 
     private 
     def post_params
-        @user = User.first.id
         params.require(:post).permit(:title , :body )
     end
 end

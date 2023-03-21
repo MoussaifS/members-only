@@ -8,6 +8,7 @@ gem "responders"
 
  
 
+
 #bootstrap 
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
